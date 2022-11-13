@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/pages/button_widget_page.dart';
+import 'package:flutter_widgets/pages/container_widget_page.dart';
+import 'package:flutter_widgets/pages/image_widget_page.dart';
 import 'package:flutter_widgets/pages/text_widget_page.dart';
+import 'package:flutter_widgets/widgets/custom_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextButton(
+            CustomButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -58,14 +61,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 );
               },
-              child: const Text(
-                "Text Widget",
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
+              text: "Text Widget",
             ),
-            TextButton(
+            CustomButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -74,12 +72,29 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 );
               },
-              child: const Text(
-                "Button Widget",
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
+              text: "Button Widget",
+            ),
+            CustomButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ImageWidgetPage(),
+                  ),
+                );
+              },
+              text: "Image Widget",
+            ),
+            CustomButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ContainerWidgetPage(),
+                  ),
+                );
+              },
+              text: "Container Widget",
             ),
           ],
         ),
