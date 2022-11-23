@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/pages/button_widget_page.dart';
+import 'package:flutter_widgets/pages/column_widget_page.dart';
 import 'package:flutter_widgets/pages/container_widget_page.dart';
+import 'package:flutter_widgets/pages/form_widget_page.dart';
+import 'package:flutter_widgets/pages/gridview_widget_page.dart';
 import 'package:flutter_widgets/pages/image_widget_page.dart';
+import 'package:flutter_widgets/pages/listview_widget_page.dart';
+import 'package:flutter_widgets/pages/navigator_page.dart';
+import 'package:flutter_widgets/pages/row_widget_page.dart';
 import 'package:flutter_widgets/pages/text_widget_page.dart';
 import 'package:flutter_widgets/widgets/custom_button.dart';
 
@@ -34,14 +40,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,6 +93,72 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               text: "Container Widget",
+            ),
+            CustomButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const RowWidgetPage(),
+                  ),
+                );
+              },
+              text: "Row Widget",
+            ),
+            CustomButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ColumnWidgetPage(),
+                  ),
+                );
+              },
+              text: "Column Widget",
+            ),
+            CustomButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ListViewWidgetPage(),
+                  ),
+                );
+              },
+              text: "ListView Widget",
+            ),
+            CustomButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GridViewWidgetPage(),
+                  ),
+                );
+              },
+              text: "GridView Widget",
+            ),
+            CustomButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const NavigatorPage(),
+                  ),
+                );
+              },
+              text: "Navigator page Widget",
+            ),
+            CustomButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => FormPage(),
+                  ),
+                );
+              },
+              text: "Form Page",
             ),
           ],
         ),
