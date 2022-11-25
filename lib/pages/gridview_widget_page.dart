@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class GridViewWidgetPage extends StatelessWidget {
   GridViewWidgetPage({Key? key}) : super(key: key);
 
-  List<String> items = [
+  List<String> urls = [
     "assets/chihuahua-dog-puppy-cute-39317.jpeg",
     "assets/cutest-dog-breeds-jpg.jpg",
     "assets/pexels-photo-58997.jpeg",
@@ -45,9 +45,9 @@ class GridViewWidgetPage extends StatelessWidget {
           crossAxisCount: 3,
           crossAxisSpacing: 10,
           children: List.generate(
-            items.length,
+            urls.length,
             (index) => GridItem(
-              url: items[index],
+              url: urls[index],
               index: index,
             ),
           ),
