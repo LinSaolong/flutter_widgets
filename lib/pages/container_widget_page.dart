@@ -15,11 +15,12 @@ class ContainerWidgetPage extends StatelessWidget {
           Container(
             width: 200,
             height: 400,
-            margin: const EdgeInsets.fromLTRB(100, 30, 10, 20),
+            // alignment: Alignment.center,
+            margin: const EdgeInsets.fromLTRB(50, 30, 10, 20),
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: Colors.amber[200],
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(20),
             ),
             child: const Text("Container 1"),
           ),

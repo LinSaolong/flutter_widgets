@@ -16,14 +16,23 @@ class ImageWidgetPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(height: 20),
-            Image.asset(
-              "assets/cutest-dog-breeds-jpg.jpg",
+            SizedBox(
               width: 300,
+              child: Image.asset(
+                "assets/cutest-dog-breeds-jpg.jpg",
+                fit: BoxFit.fill,
+              ),
             ),
             const SizedBox(height: 20),
-            Image.network(
-              "https://www.goodinfonet.com/uploads/news/goodinfonet_why_dogs_are_so_cute_1597490163_0.jpg",
+            Container(
+              color: Colors.blueAccent,
+              width: 300,
               height: 300,
+              child: Image.network(
+                "https://www.goodinfonet.com/uploads/news/goodinfonet_why_dogs_are_so_cute_1597490163_0.jpg",
+                fit: BoxFit.contain,
+                height: 300,
+              ),
             ),
           ],
         ),
