@@ -29,6 +29,15 @@ class ButtonWidgetPage extends StatelessWidget {
               style: ButtonStyle(
                 padding: MaterialStateProperty.all<EdgeInsets>(
                     const EdgeInsets.all(10)),
+                backgroundColor: MaterialStateProperty.all<Color>(
+                  Colors.blueAccent,
+                ),
+                overlayColor: MaterialStateProperty.all<Color>(
+                  Colors.red,
+                ),
+                shadowColor: MaterialStateProperty.all<Color>(
+                  Colors.green,
+                ),
               ),
               onPressed: () {
                 print("ElevatedButton Pressed");

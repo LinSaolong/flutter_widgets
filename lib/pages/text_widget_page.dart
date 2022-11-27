@@ -13,7 +13,10 @@ class TextWidgetPage extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(8.0),
           child: Text(
-            "Hello World! This is a text widget.",
+            "Hello World! This is a text widget.Lorem ipsum dolor sit amet.",
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(
               color: Colors.black,
               fontSize: 25,
