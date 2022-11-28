@@ -9,58 +9,41 @@ class RowWidgetPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Row Widget Page"),
       ),
-      body: Container(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              children: [
-                Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    child: const Text("child 1")),
-                Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    child: const Text("child 2")),
-                Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    child: const Text("child 3")),
-                Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    child: const Text("child 4")),
-                Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    child: const Text("child 5")),
-              ],
-            ),
-            const SizedBox(height: 50),
-            Row(
-              children: [
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Image.asset(
-                    "assets/cutest-dog-breeds-jpg.jpg",
-                    width: 100,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Image.asset(
-                    "assets/cutest-dog-breeds-jpg.jpg",
-                    width: 100,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Image.asset(
-                    "assets/cutest-dog-breeds-jpg.jpg",
-                    width: 100,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: const [
+              Text("child 1"),
+              Text("child 2"),
+              Text("child 3"),
+              Text("child 4"),
+              Text("child 5"),
+            ],
+          ),
+          const SizedBox(height: 50),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset(
+                "assets/cutest-dog-breeds-jpg.jpg",
+                width: 100,
+              ),
+              Image.asset(
+                "assets/cutest-dog-breeds-jpg.jpg",
+                width: 100,
+              ),
+              Image.asset(
+                "assets/cutest-dog-breeds-jpg.jpg",
+                width: 100,
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

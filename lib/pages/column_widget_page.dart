@@ -9,8 +9,11 @@ class ColumnWidgetPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Column Widget Page"),
       ),
-      body: Center(
+      body: SizedBox(
+        width: double.infinity,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Container(
               margin: const EdgeInsets.symmetric(vertical: 10),
