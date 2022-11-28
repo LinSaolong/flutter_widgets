@@ -17,6 +17,7 @@ class _FormPageState extends State<FormPage> {
   final _formKey = GlobalKey<FormState>();
   bool checked = false;
   String gender = "male";
+  String name = "";
 
   @override
   Widget build(BuildContext context) {
@@ -29,20 +30,27 @@ class _FormPageState extends State<FormPage> {
           key: _formKey,
           child: Column(
             children: [
-              CustomFormField(
-                hintText: 'Name',
+              TextFormField(
+                onSaved: ((value) {
+                  if (value != null) {
+                    name = value;
+                  }
+                }),
                 inputFormatters: [
                   FilteringTextInputFormatter.allow(
                     RegExp(r"[a-zA-Z]+|\s"),
                   )
                 ],
+                decoration: const InputDecoration(hintText: "Name"),
                 validator: (val) {
-                  if (val != null && val == "") return 'Enter valid name';
+                  if (val != null && val.trim() == "")
+                    return 'Enter valid name';
                   return null;
                 },
               ),
-              CustomFormField(
-                hintText: 'Email',
+              TextFormField(
+                onSaved: ((value) {}),
+                decoration: const InputDecoration(hintText: "Email"),
                 validator: (val) {
                   if (val != null && !val.isValidEmail) {
                     return 'Enter valid email';
@@ -50,13 +58,14 @@ class _FormPageState extends State<FormPage> {
                   return null;
                 },
               ),
-              CustomFormField(
-                hintText: 'Phone',
+              TextFormField(
+                onSaved: ((value) {}),
                 inputFormatters: [
                   FilteringTextInputFormatter.allow(
                     RegExp(r"[0-9]"),
                   )
                 ],
+                decoration: const InputDecoration(hintText: "Phone"),
                 validator: (val) {
                   if (val != null && !val.isValidPhone) {
                     return 'Enter valid phone';
@@ -64,9 +73,9 @@ class _FormPageState extends State<FormPage> {
                   return null;
                 },
               ),
-              CustomFormField(
-                obscureText: true,
-                hintText: 'Password',
+              TextFormField(
+                onSaved: ((value) {}),
+                decoration: const InputDecoration(hintText: "Password"),
                 validator: (val) {
                   if (val != null) {
                     if (!val.isValidPassword) return 'Enter valid password';
@@ -99,6 +108,7 @@ class _FormPageState extends State<FormPage> {
                       onChanged: (value) {
                         setState(() {
                           gender = value.toString();
+                          print(value);
                         });
                       },
                     ),

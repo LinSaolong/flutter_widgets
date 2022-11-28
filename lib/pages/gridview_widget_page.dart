@@ -41,15 +41,15 @@ class GridViewWidgetPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: GridView.count(
-          crossAxisCount: 3,
-          crossAxisSpacing: 10,
-          children: List.generate(
-            urls.length,
-            (index) => GridItem(
-              url: urls[index],
-              index: index,
-            ),
+        child: GridView.builder(
+          itemCount: urls.length,
+          itemBuilder: ((context, index) {
+            return GridItem(url: urls[index], index: index);
+          }),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            mainAxisSpacing: 5.0,
+            crossAxisSpacing: 10,
           ),
         ),
       ),

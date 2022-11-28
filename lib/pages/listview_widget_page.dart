@@ -5,92 +5,64 @@ class ListViewWidgetPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final items = [
+      'Item 1',
+      'Item 2',
+      'Item 3',
+      'Item 4',
+      'Item 5',
+      'Item 6',
+      'Item 7',
+      'Item 8',
+      'Item 9',
+    ];
     return Scaffold(
       appBar: AppBar(title: const Text('ListView Widget Page')),
       body: SizedBox(
         child: Column(
           children: [
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 30),
-              height: 50,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    child: const Text(
-                      "child 1",
-                      style: TextStyle(fontSize: 50),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    child: const Text(
-                      "child 2",
-                      style: TextStyle(fontSize: 50),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    child: const Text(
-                      "child 3",
-                      style: TextStyle(fontSize: 50),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    child: const Text(
-                      "child 4",
-                      style: TextStyle(fontSize: 50),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    child: const Text(
-                      "child 5",
-                      style: TextStyle(fontSize: 50),
-                    ),
-                  ),
-                ],
-              ),
-            ),
             Flexible(
               fit: FlexFit.tight,
               child: Container(
                 padding: const EdgeInsets.all(10),
                 height: 500,
-                child: ListView(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 10),
-                      child: Image.asset("assets/cutest-dog-breeds-jpg.jpg",
-                          width: 250),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 10),
-                      child: Image.asset(
-                        "assets/cutest-dog-breeds-jpg.jpg",
-                        width: 250,
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 10),
-                      child: Image.asset(
-                        "assets/cutest-dog-breeds-jpg.jpg",
-                        width: 250,
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 10),
-                      child: Image.asset(
-                        "assets/cutest-dog-breeds-jpg.jpg",
-                        width: 250,
-                      ),
-                    )
-                  ],
+                child: ListView.builder(
+                  itemCount: items.length,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          items[index],
+                          style: const TextStyle(fontSize: 25),
+                        ),
+                        const SizedBox(height: 30)
+                      ],
+                    );
+                  },
                 ),
               ),
-            )
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 30),
+              height: 50,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: items.length,
+                itemBuilder: (context, index) {
+                  return Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        items[index],
+                        style: const TextStyle(fontSize: 25),
+                      ),
+                      const SizedBox(width: 30)
+                    ],
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
